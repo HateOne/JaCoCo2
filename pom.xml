@@ -54,9 +54,28 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
-                </executions>
-            </plugin>
-        </plugins>
+                         <execution>
+                        <id>check</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <limits>
+                                        <limit>
+                                            <counter>BRANCH</counter>
+                                            <minimum>100%</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                  </configuration>
+                  </execution>
+         </executions>
+ </plugin>
+ </plugins>
     </build>
 
 </project>
